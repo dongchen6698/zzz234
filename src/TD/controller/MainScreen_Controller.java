@@ -45,7 +45,7 @@ public class MainScreen_Controller {
         mcView.setAlwaysOnTop(true);
         mcView.setFocusable(true);
         MapCreation_Controller theMapCreation = new MapCreation_Controller(mcView, mcModel, this);
-        //theMapCreation.startMapCreation();
+        theMapCreation.startMapCreation();
     }
 	
 	/**

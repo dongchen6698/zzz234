@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 import TD.controller.MapBox_Controller;
 
 public class MapCreation_View extends JFrame implements WindowListener{
-	JLabel Row,Col;
+	JLabel row,col;
 	JTextField row_Input,col_Input;
 	JButton setMapBTN;
 	JButton saveMapBTN,loadMapBTN,backBTN;
@@ -40,8 +40,8 @@ public class MapCreation_View extends JFrame implements WindowListener{
         map_grid_panel = new JPanel();
         map_grid_panel.setBackground(Color.DARK_GRAY);
         
-        Row = new JLabel("Row : ");
-        Col = new JLabel("Col : ");
+        row = new JLabel("The number of Row : ");
+        col = new JLabel("The number of Col : ");
         
         row_Input = new JTextField("3",20);
         col_Input = new JTextField("3",20);
@@ -62,14 +62,14 @@ public class MapCreation_View extends JFrame implements WindowListener{
         map_object_panel.setLayout(new GridLayout(0,6,5,5));
         map_object_panel.setBackground(Color.GRAY);
         
-        map_object_panel.add(Row);
+        map_object_panel.add(row);
         map_object_panel.add(row_Input);
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(EntryBTN);
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(loadMapBTN);
         
-        map_object_panel.add(Col);
+        map_object_panel.add(col);
         map_object_panel.add(col_Input);
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(PathBTN);
@@ -133,15 +133,14 @@ public class MapCreation_View extends JFrame implements WindowListener{
      * @param  mbCont the controller object of map box controller.
      * @return flag
      */
-//    public boolean addGridMap(MapBoxController mbCont){
-//        this.mbCont = mbCont;
-//        System.out.println("xbc"+mbCont.getXBlockCount());
-//        MapBoxView x = this.mbCont.getView();
-//        map_grid_panel.add(x);
-//        this.mbCont.setBtnGridClickListner();
-//        map_grid_panel.validate();
-//        return true;
-//    }
+    public boolean addGridMap(MapBox_Controller mbCont){
+        this.mbCont = mbCont;
+        MapBox_View x = this.mbCont.getView();
+        map_grid_panel.add(x);
+        this.mbCont.setBtnGridClickListner();
+        map_grid_panel.validate();
+        return true;
+    }
     
     /**
      * This method will add button listener.
@@ -175,6 +174,14 @@ public class MapCreation_View extends JFrame implements WindowListener{
      */
     public void disableLoadButton(){
         loadMapBTN.setEnabled(false);
+    }
+    
+    /**
+     * This method create Message show dialog box.
+     * @param str message string.
+     */
+    public void displayMessage(String str){
+        JOptionPane.showMessageDialog(this, str);
     }
     
     /**

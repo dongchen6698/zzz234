@@ -3,12 +3,12 @@ package TD.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileFilter;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import TD.model.MapCreation_Model;
@@ -42,7 +42,7 @@ public class MapCreation_Controller {
             String tempBtnStr = e.getActionCommand();
             if(e.getSource() instanceof JButton)
             {
-                if(tempBtnStr.equals("setMapBTN")){
+                if(tempBtnStr.equals("Set Grid")){
                     int xC = theView.getRowInput();
                     int yC = theView.getColInput();
                     String errMsg = "";
@@ -61,20 +61,16 @@ public class MapCreation_Controller {
                     if(yC > 15){
                         errMsg += "Sorry, Your Col Size is bigger than 15. Please use smaller value.\n";
                     }
-                    
                     if(errMsg.equals("")){
                         theView.setdisabledloadMapBTN();
-                        System.out.println("Map Grid is Created.");
                         mbCon = new MapBox_Controller();
                         mbCon.setXBlockCount(xC);
                         mbCon.setYBlockCount(yC);
                         mbCon.setGridArray();
                         theView.addGridMap(mbCon);
                         theView.disableSubmitButton();
-                    }
-                    else
+                    }else
                     {
-                        LogGenerator.addLog("Invalid Map x,y parameter");
                         theView.displayMessage(errMsg);
                     }
                 }
@@ -92,60 +88,39 @@ public class MapCreation_Controller {
                 }
                 
                 if(tempBtnStr.equals("Load Map")){
-                    LogGenerator.addLog("Load Map Initialized.");
-                    System.out.println("Load Map: Clicked");
-                    final JFileChooser  fileDialog = new JFileChooser();
-                    FileFilter filter = new FileNameExtensionFilter("TDMap file", "txt");
+                    final JFileChooser  fileDialog = new JFileChooser("MapFiles/");
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter("TDMap file","dat");
                     fileDialog.addChoosableFileFilter(filter);
                     int returnVal = fileDialog.showOpenDialog(theView);
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
                        File file = fileDialog.getSelectedFile();
-                       theView.setdisabledsubmitBtn();
-                       mbCon = new MapBoxController();
-                       LogGenerator.addLog("MapFile Selected By user : "+file.getName());
+                       theView.setdisabledloadMapBTN();
+                       mbCon = new MapBox_Controller();
                        if(theModel.readFile(mbCon, file.getName(), file)){
                         System.out.println("Map Grid is Created from file.");
                         theView.addGridMap(mbCon);
                         theView.disableSubmitButton();
                         theView.disableLoadButton();
-                        LogGenerator.addLog("Loadded Map is Valid");
                        }else{
-                           LogGenerator.addLog("Loadded Map is inalid");
                            theView.displayMessage("Invalid Map File");
                        }
                     }
-                    else{
-                       //theView.displayMessage("Open command cancelled by user." );           
-                    } 
                 }
 
                 if(tempBtnStr.equals("Save Map")){
-                    LogGenerator.addLog("User wants to save map.");
                     System.out.println("Save Clicked");
                     if(mbCon.validPath(mbCon.getMapGirdArray()).equals("Done")){
-                        LogGenerator.addLog("User edited map is valid.");
                         String file_name = theView.getFileName();
                         System.out.println("file "+file_name);
                         if(file_name == null){
                             
-                        }else if(file_name.isEmpty()){
-                             Date date = new Date();
-                             SimpleDateFormat ft =  new SimpleDateFormat ("dd.MM.yyyy hh_mm_ss a");
-                            System.out.println(""+ft.format(date));
-                            mbCon.saveMap(ft.format(date));
-                            theView.displayMessage("Thank You, Your Map is successfully saved with "+ft.format(date));
-                            theView.dispose();
-                            msCon.setTopEnabled();
-                            LogGenerator.addLog("MapFile saved as : "+ft.format(date));
                         }else{
                             mbCon.saveMap(file_name);
                             theView.displayMessage("Thank You, Your Map is successfully saved with "+file_name);
                             theView.dispose();
                             msCon.setTopEnabled();
-                            LogGenerator.addLog("MapFile saved as : "+file_name);
                         }
                     }else{
-                        LogGenerator.addLog("User edited map is not valid.");
                         theView.displayMessage("Sorry, Your Path is invalid.");
                     }
                 }
