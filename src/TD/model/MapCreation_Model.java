@@ -3,10 +3,10 @@ package TD.model;
 import java.io.File;
 import java.util.Scanner;
 import TD.controller.MapBox_Controller;
-
 /**
  * This is model class of Map Creation Module.
- * @author Rahul K Kikani
+ * @author peilin
+ *
  */
 public class MapCreation_Model {
     

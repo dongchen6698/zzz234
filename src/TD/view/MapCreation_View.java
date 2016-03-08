@@ -64,28 +64,28 @@ public class MapCreation_View extends JFrame implements WindowListener{
         saveMapBTN.setEnabled(false);
         
         map_grid_panel.setBackground(Color.DARK_GRAY);
-        map_object_panel.setLayout(new GridLayout(0,6,5,5));
+        map_object_panel.setLayout(new GridLayout(0,4,5,5));
         map_object_panel.setBackground(Color.GRAY);
         
         map_object_panel.add(row);
         map_object_panel.add(rowInfo);
-        map_object_panel.add(new JLabel(""));
+        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(EntryBTN);
-        map_object_panel.add(new JLabel(""));
+        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(loadMapBTN);
         
         map_object_panel.add(col);
         map_object_panel.add(colInfo);
-        map_object_panel.add(new JLabel(""));
+        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(PathBTN);
-        map_object_panel.add(new JLabel(""));
+        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(saveMapBTN);
         
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(setMapBTN);
-        map_object_panel.add(new JLabel(""));
+        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(ExitBTN);
-        map_object_panel.add(new JLabel(""));
+        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(backBTN);
         
         this.add(map_object_panel,BorderLayout.SOUTH);

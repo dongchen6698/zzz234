@@ -74,7 +74,7 @@ public class MapChooser_View extends JFrame {
 
         JScrollPane fruitListScrollPane = new JScrollPane(fruitList);    
 
-        showButton = new JButton("Let's Play");
+        showButton = new JButton("Start game");
         this.add(fruitListScrollPane,BorderLayout.CENTER);  
         this.add(showButton,BorderLayout.SOUTH);
     }

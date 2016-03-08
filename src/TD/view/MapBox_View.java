@@ -96,7 +96,7 @@ public class MapBox_View extends JPanel {
         for(int y=0;y<mbCon.getYBlockCount();y++){
             for(int x=0;x<mbCon.getXBlockCount();x++){
               if(x==0){
-                  cellBtn[y][0].setBackground(Color.gray);
+                  cellBtn[y][0].setBackground(Color.green);
                   cellBtn[y][0].setEnabled(true);
               }
               else{
@@ -142,7 +142,7 @@ public class MapBox_View extends JPanel {
           for(int y=0;y<mbCon.getYBlockCount();y++){
               if(x==mbCon.getXBlockCount()-1)
               {
-                  cellBtn[y][mbCon.getXBlockCount()-1].setBackground(Color.gray);
+                  cellBtn[y][mbCon.getXBlockCount()-1].setBackground(Color.green);
                   cellBtn[y][mbCon.getXBlockCount()-1].setEnabled(true);
               }
               else{
@@ -160,9 +160,9 @@ public class MapBox_View extends JPanel {
      */
     public boolean setSlectedCell(){
         if(mbCon.getEentryPointData() != 9)
-            cellBtn[mbCon.getEentryPointData()][0].setBackground(new Color(165, 42, 42));
+            cellBtn[mbCon.getEentryPointData()][0].setBackground(Color.BLUE);
         if(mbCon.getExitPointData() != 9)
-            cellBtn[mbCon.getExitPointData()][mbCon.getXBlockCount()-1].setBackground(new Color(165, 42, 42));
+            cellBtn[mbCon.getExitPointData()][mbCon.getXBlockCount()-1].setBackground(Color.RED);
         int[][] temp = mbCon.getMapGirdArray();
         for(int x=0;x<mbCon.getXBlockCount();x++){
             for(int y=0;y<mbCon.getYBlockCount();y++){
@@ -184,9 +184,9 @@ public class MapBox_View extends JPanel {
             return false;
         }
         for(int y=0;y<mbCon.getYBlockCount();y++){
-            cellBtn[y][0].setBackground(Color.gray);
+            cellBtn[y][0].setBackground(Color.green);
         }
-        cellBtn[yC][xC].setBackground(new Color(165, 42, 42));
+        cellBtn[yC][xC].setBackground(Color.BLUE);
         return true;
     }
     
@@ -218,9 +218,9 @@ public class MapBox_View extends JPanel {
             return false;
     	}
         for(int y=0;y<mbCon.getYBlockCount();y++){
-            cellBtn[y][mbCon.getXBlockCount()-1].setBackground(Color.gray);
+            cellBtn[y][mbCon.getXBlockCount()-1].setBackground(Color.green);
         }
-        cellBtn[yC][xC].setBackground(new Color(165, 42, 42));
+        cellBtn[yC][xC].setBackground(Color.RED);
         return true;
     }
     

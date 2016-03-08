@@ -7,7 +7,9 @@ import java.io.File;
 import javax.swing.JButton;
 
 import TD.model.MapChooser_Model;
+import TD.model.PlayScreen_Model;
 import TD.view.MapChooser_View;
+import TowerDefenceGame.GamePlay;
 
 /**
  * This Class will bind and initialize Model-View of Map Chooser Module.
@@ -47,17 +49,17 @@ public class MapChooser_Controller {
             String tempBtnStr = e.getActionCommand();
             if(e.getSource() instanceof JButton)
             {
-                if(tempBtnStr.equals("Let's Play")){
+                if(tempBtnStr.equals("Start game")){
                     if(theView.getSelectedFile().equals("NONE")){
                         theView.displayMessage("Please Select At least one file.");
-                    }//else{
-                      //  PlayScreenModel psModel = new PlayScreenModel();
-                      //  boolean temp = psModel.LoadMap(new File("MapFiles/"+theView.getSelectedFile()));
-                      //  if(temp){
-                      //      GamePlay gp = new GamePlay(new File("MapFiles/"+theView.getSelectedFile()), psModel.getxC(), psModel.getyC());
-                       //     theView.setMSTOp(false);
-                      //      theView.dispose();
-                    //  }
+                    }else{
+                        PlayScreen_Model psModel = new PlayScreen_Model();
+                        boolean temp = psModel.LoadMap(new File("MapFiles/"+theView.getSelectedFile()));
+                        if(temp){
+                            GamePlay gp = new GamePlay(new File("MapFiles/"+theView.getSelectedFile()), psModel.getxC(), psModel.getyC());
+                            theView.setMSTOp(false);
+                            theView.dispose();
+                      }
                         else{
                             theView.displayMessage("Incorrect Map File");
                         }
@@ -68,3 +70,4 @@ public class MapChooser_Controller {
         }
     }
 
+}
