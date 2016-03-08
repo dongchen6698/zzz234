@@ -6,8 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 import TD.model.MainScreen_Model;
+import TD.model.MapChooser_Model;
 import TD.model.MapCreation_Model;
 import TD.view.MainScreen_View;
+import TD.view.MapChooser_View;
 import TD.view.MapCreation_View;
 /**
  * This Class will bind and initialize Model-View of Main Screen Module.
@@ -59,9 +61,9 @@ public class MainScreen_Controller {
             if(e.getSource() instanceof JButton)
             {
                 if(tempBtnStr.equals("Start Game")){
-                   // MapChooserModel mcModel = new MapChooserModel();
-                   // MapChooserView mcView = new MapChooserView(theView, mcModel.getMapFileList());
-                   // MapChooserController mp = new MapChooserController(mcView,mcModel);
+                    MapChooser_Model mcModel = new MapChooser_Model();
+                    MapChooser_View mcView = new MapChooser_View(theView, mcModel.getMapFileList());
+                    MapChooser_Controller mp = new MapChooser_Controller(mcView,mcModel);
                 }
 
                 if(tempBtnStr.equals("Creat Maps")){
