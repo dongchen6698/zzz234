@@ -8,6 +8,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -18,13 +19,14 @@ import TD.controller.MapBox_Controller;
 
 public class MapCreation_View extends JFrame implements WindowListener{
 	JLabel row,col;
-	JTextField row_Input,col_Input;
+	JComboBox rowInfo,colInfo;
 	JButton setMapBTN;
 	JButton saveMapBTN,loadMapBTN,backBTN;
 	JButton EntryBTN,PathBTN,ExitBTN;
 	JPanel map_object_panel;
     JPanel map_grid_panel;
     MapBox_Controller mbCont;
+    
 	
 	/**
      * This method is initialize GUI components for Map Creation Screen.
@@ -38,13 +40,15 @@ public class MapCreation_View extends JFrame implements WindowListener{
         
         map_object_panel = new JPanel();
         map_grid_panel = new JPanel();
-        map_grid_panel.setBackground(Color.DARK_GRAY);
+        
         
         row = new JLabel("The number of Row : ");
         col = new JLabel("The number of Col : ");
         
-        row_Input = new JTextField("3",20);
-        col_Input = new JTextField("3",20);
+        String[] rowdata = {"7","8","9","10","11","12","13","14","15"};
+        String[] coldata = {"7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
+        rowInfo = new JComboBox(rowdata);
+        colInfo = new JComboBox(coldata);
         
         setMapBTN = new JButton("Set Grid");
         EntryBTN = new JButton("Entry Point");
@@ -59,18 +63,19 @@ public class MapCreation_View extends JFrame implements WindowListener{
         ExitBTN.setEnabled(false);
         saveMapBTN.setEnabled(false);
         
+        map_grid_panel.setBackground(Color.DARK_GRAY);
         map_object_panel.setLayout(new GridLayout(0,6,5,5));
         map_object_panel.setBackground(Color.GRAY);
         
         map_object_panel.add(row);
-        map_object_panel.add(row_Input);
+        map_object_panel.add(rowInfo);
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(EntryBTN);
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(loadMapBTN);
         
         map_object_panel.add(col);
-        map_object_panel.add(col_Input);
+        map_object_panel.add(colInfo);
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(PathBTN);
         map_object_panel.add(new JLabel(""));
@@ -93,13 +98,13 @@ public class MapCreation_View extends JFrame implements WindowListener{
      * 
      */
     public int getRowInput(){
-        if(row_Input.getText().equals("")){
+        if(rowInfo.getSelectedItem().equals("")){
             return 0;
         }
         else{
             int temp = 0;
             try{
-                temp  = Integer.parseInt(row_Input.getText());
+                temp  = Integer.parseInt((String) rowInfo.getSelectedItem());
             } catch(Exception e){
                 System.out.println("Inter exception");
                 temp = 0;
@@ -113,13 +118,13 @@ public class MapCreation_View extends JFrame implements WindowListener{
      * 
      */
     public int getColInput(){
-        if(col_Input.getText().equals("")){
+        if(colInfo.getSelectedItem().equals("")){
             return 0;
         }
         else{
             int temp = 0;
             try{
-                temp  = Integer.parseInt(col_Input.getText());
+                temp  = Integer.parseInt((String) colInfo.getSelectedItem());
             } catch(Exception e){
                 System.out.println("Inter exception");
                 temp = 0;
@@ -161,8 +166,8 @@ public class MapCreation_View extends JFrame implements WindowListener{
      */
     public void disableSubmitButton(){
         setMapBTN.setEnabled(false);
-        row_Input.setEnabled(false);
-        col_Input.setEnabled(false);
+        rowInfo.setEnabled(false);
+        colInfo.setEnabled(false);
         EntryBTN.setEnabled(true);
         PathBTN.setEnabled(true);
         ExitBTN.setEnabled(true);
