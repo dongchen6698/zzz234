@@ -145,7 +145,6 @@ public class MapBox_Model {
      */
     public void setGridArray(){
         mapGirdArray = new int[yBlockCount][xBlockCount];
-        System.out.println("MapBox_Model.setGridArray()");
         for(int x=0;x<xBlockCount;x++){
           for(int y=0;y<yBlockCount;y++){
                 mapGirdArray[y][x] = 0;

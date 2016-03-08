@@ -44,8 +44,7 @@ public class MapCreation_Controller {
             {
                 if(tempBtnStr.equals("Set Grid")){
                     int xC = theView.getColInput();
-                    int yC = theView.getRowInput();
-                    
+                    int yC = theView.getRowInput();                    
                     theView.setdisabledloadMapBTN();
                     mbCon = new MapBox_Controller();
                     mbCon.setXBlockCount(xC);
@@ -53,23 +52,6 @@ public class MapCreation_Controller {
                     mbCon.setGridArray();
                     theView.addGridMap(mbCon);
                     theView.disableSubmitButton();                   
-//                    String errMsg = "";
-//                    if(xC == 0 || yC ==0){
-//                        errMsg += "Input is Invalid.";
-//                    }
-//                    if(xC < 7){
-//                        errMsg += "Sorry, Your Row Size is smaller than 7. Please use biger value.\n";
-//                    }
-//                    if(yC < 7){
-//                        errMsg += "Sorry, Your Col Size is smaller than 7. Please use biger value.\n";
-//                    }
-//                    if(xC > 20){
-//                        errMsg += "Sorry, Your Row Size is bigger than 20. Please use smaller value.\n";
-//                    }
-//                    if(yC > 15){
-//                        errMsg += "Sorry, Your Col Size is bigger than 15. Please use smaller value.\n";
-//                    }
-      
                 }
                 
                 if(tempBtnStr.equals("Entry Point")){
@@ -86,7 +68,7 @@ public class MapCreation_Controller {
                 
                 if(tempBtnStr.equals("Load Map")){
                     final JFileChooser  fileDialog = new JFileChooser("MapFiles/");
-                    FileNameExtensionFilter filter = new FileNameExtensionFilter("TDMap file","dat");
+                    FileNameExtensionFilter filter = new FileNameExtensionFilter("MapData File","dat");
                     fileDialog.addChoosableFileFilter(filter);
                     int returnVal = fileDialog.showOpenDialog(theView);
                     if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -94,7 +76,6 @@ public class MapCreation_Controller {
                        theView.setdisabledloadMapBTN();
                        mbCon = new MapBox_Controller();
                        if(theModel.readFile(mbCon, file.getName(), file)){
-                        System.out.println("Map Grid is Created from file.");
                         theView.addGridMap(mbCon);
                         theView.disableSubmitButton();
                         theView.disableLoadButton();
@@ -105,7 +86,6 @@ public class MapCreation_Controller {
                 }
 
                 if(tempBtnStr.equals("Save Map")){
-                    System.out.println("Save Clicked");
                     if(mbCon.validPath(mbCon.getMapGirdArray()).equals("Done")){
                         String file_name = theView.getFileName();
                         System.out.println("file "+file_name);
