@@ -1,6 +1,8 @@
 package TD.model;
 
 import java.awt.Rectangle;
+
+import TD.config.ConfigModel;
 import TD.controller.CellContainer_Controller;
 /**
  *

@@ -9,6 +9,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import javax.swing.JButton;
 import javax.swing.JComponent;
+
+import TD.mapValidation.MapValidation;
 import TD.model.MapBox_Model;
 import TD.view.MapBox_View;
 

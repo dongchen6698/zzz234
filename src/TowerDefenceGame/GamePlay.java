@@ -9,10 +9,10 @@ import java.io.File;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import TD.controller.MapValidation;
+import TD.config.ConfigModel;
 import TD.controller.PlayScreen_Controller;
+import TD.mapValidation.MapValidation;
 import TD.model.CellContainer_Model;
-import TD.model.ConfigModel;
 import TD.model.GridCell_Model;
 import TD.model.PlayScreen_Model;
 import TD.model.Shop_Model;

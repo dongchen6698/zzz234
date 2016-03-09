@@ -1,6 +1,6 @@
-package TD.controller;
+package TD.mapValidation;
 
-import TD.model.ConfigModel;
+import TD.config.ConfigModel;
 
 /**
  * This controller will used to validation of Map.

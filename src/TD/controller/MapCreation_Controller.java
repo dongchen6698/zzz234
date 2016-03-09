@@ -44,14 +44,22 @@ public class MapCreation_Controller {
             {
                 if(tempBtnStr.equals("Set Grid")){
                     int xC = theView.getColInput();
-                    int yC = theView.getRowInput();                    
+                    int yC = theView.getRowInput(); 
+                    String errmsg = "";
+                    if(xC == 0 || yC ==0){
+                        errmsg += "Input is Invalid.";
+                    }
+                    if(errmsg == ""){
                     theView.setdisabledloadMapBTN();
                     mbCon = new MapBox_Controller();
                     mbCon.setXBlockCount(xC);
                     mbCon.setYBlockCount(yC);
                     mbCon.setGridArray();
                     theView.addGridMap(mbCon);
-                    theView.disableSubmitButton();                   
+                    theView.disableSubmitButton();
+                    }else{
+                    	theView.displayMessage(errmsg);
+                    }
                 }
                 
                 if(tempBtnStr.equals("Entry Point")){

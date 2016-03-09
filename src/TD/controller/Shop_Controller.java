@@ -7,8 +7,9 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import TD.config.ConfigModel;
 import TD.model.Shop_Model;
-import TD.model.ConfigModel;
 import TD.view.Shop_View;
 
 /**

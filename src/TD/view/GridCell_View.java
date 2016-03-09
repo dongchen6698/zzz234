@@ -3,7 +3,7 @@ package TD.view;
 import java.awt.Color;
 import java.awt.Graphics;
 
-import TD.model.ConfigModel;
+import TD.config.ConfigModel;
 import TD.model.GridCell_Model;
 
 

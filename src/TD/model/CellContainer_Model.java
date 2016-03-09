@@ -1,6 +1,8 @@
 package TD.model;
 
 import java.text.ParseException;
+
+import TD.config.ConfigModel;
 import TD.controller.GridCell_Controller;
 
 /**

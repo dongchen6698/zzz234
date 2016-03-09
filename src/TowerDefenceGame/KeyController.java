@@ -5,7 +5,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.Observable;
-import TD.model.ConfigModel;
+
+import TD.config.ConfigModel;
 
 /**
  * This class will take input from user via mouse and trigger the appropriate function.

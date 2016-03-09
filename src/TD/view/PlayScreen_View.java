@@ -2,6 +2,8 @@
 
 package TD.view;
 
+import static TD.config.ConfigModel.*;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -16,11 +18,10 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
+import TD.config.ConfigModel;
 import TD.controller.PlayScreen_Controller;
 import TD.controller.Shop_Controller;
 import TD.model.Creature_Model;
-import TD.model.ConfigModel;
-import static TD.model.ConfigModel.*;
 import TowerDefenceGame.*;
 
 /**

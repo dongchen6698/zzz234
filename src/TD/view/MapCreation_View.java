@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -18,7 +19,6 @@ import javax.swing.JTextField;
 import TD.controller.MapBox_Controller;
 
 public class MapCreation_View extends JFrame implements WindowListener{
-	JLabel row,col;
 	JComboBox rowInfo,colInfo;
 	JButton setMapBTN;
 	JButton saveMapBTN,loadMapBTN,backBTN;
@@ -41,19 +41,15 @@ public class MapCreation_View extends JFrame implements WindowListener{
         map_object_panel = new JPanel();
         map_grid_panel = new JPanel();
         
-        
-        row = new JLabel("The number of Row : ");
-        col = new JLabel("The number of Col : ");
-        
-        String[] rowdata = {"7","8","9","10","11","12","13","14","15"};
-        String[] coldata = {"7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
+        String[] rowdata = {"The number of ROW","7","8","9","10","11","12","13","14","15"};
+        String[] coldata = {"The number of COL","7","8","9","10","11","12","13","14","15","16","17","18","19","20"};
         rowInfo = new JComboBox(rowdata);
         colInfo = new JComboBox(coldata);
         
         setMapBTN = new JButton("Set Grid");
-        EntryBTN = new JButton("Entry Point");
-        PathBTN = new JButton("Draw Path");
-        ExitBTN = new JButton("Exit Point");
+        EntryBTN = new JButton("Entry Point",new ImageIcon("resources/icon.blue.jpeg"));
+        PathBTN = new JButton("Draw Path",new ImageIcon("resources/icon.yellow.jpeg"));
+        ExitBTN = new JButton("Exit Point",new ImageIcon("resources/icon.red.jpeg"));
         saveMapBTN = new JButton("Save Map");
         loadMapBTN = new JButton("Load Map");
         backBTN = new JButton("Exit");
@@ -64,29 +60,26 @@ public class MapCreation_View extends JFrame implements WindowListener{
         saveMapBTN.setEnabled(false);
         
         map_grid_panel.setBackground(Color.DARK_GRAY);
-        map_object_panel.setLayout(new GridLayout(0,4,5,5));
+        map_object_panel.setLayout(new GridLayout(0,5,5,5));
         map_object_panel.setBackground(Color.GRAY);
         
-        map_object_panel.add(row);
+        map_object_panel.add(new JLabel(""));
         map_object_panel.add(rowInfo);
-        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(EntryBTN);
-        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(loadMapBTN);
+        map_object_panel.add(new JLabel(""));
         
-        map_object_panel.add(col);
+        map_object_panel.add(new JLabel(""));
         map_object_panel.add(colInfo);
-        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(PathBTN);
-        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(saveMapBTN);
+        map_object_panel.add(new JLabel(""));
         
         map_object_panel.add(new JLabel(""));
         map_object_panel.add(setMapBTN);
-        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(ExitBTN);
-        //map_object_panel.add(new JLabel(""));
         map_object_panel.add(backBTN);
+        map_object_panel.add(new JLabel(""));
         
         this.add(map_object_panel,BorderLayout.SOUTH);
         this.add(map_grid_panel,BorderLayout.CENTER);
@@ -98,7 +91,7 @@ public class MapCreation_View extends JFrame implements WindowListener{
      * 
      */
     public int getRowInput(){
-        if(rowInfo.getSelectedItem().equals("")){
+        if(rowInfo.getSelectedItem().equals("The number of ROW")){
             return 0;
         }
         else{
@@ -118,7 +111,7 @@ public class MapCreation_View extends JFrame implements WindowListener{
      * 
      */
     public int getColInput(){
-        if(colInfo.getSelectedItem().equals("")){
+        if(colInfo.getSelectedItem().equals("The number of COL")){
             return 0;
         }
         else{

@@ -1,4 +1,4 @@
-package TD.model;
+package TD.config;
 
 import java.awt.Image;
 import java.awt.Point;
