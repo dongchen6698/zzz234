@@ -2,7 +2,7 @@ package TD.model;
 
 import java.awt.Rectangle;
 
-import TD.config.ConfigModel;
+import TD.zz.config.ConfigModel;
 
 /**
  * This is model for Shop(Tower) Module. Tower properties, user health, money.

@@ -8,9 +8,9 @@ import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import TD.config.ConfigModel;
 import TD.model.Shop_Model;
 import TD.view.Shop_View;
+import TD.zz.config.ConfigModel;
 
 /**
  * This Class will bind and initialize Model-View of Shop(Tower) Module.

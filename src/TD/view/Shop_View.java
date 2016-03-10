@@ -5,8 +5,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import TD.config.ConfigModel;
 import TD.model.Shop_Model;
+import TD.zz.config.ConfigModel;
 
 /**
   * This is GUI class of Shop(Tower) Module.
