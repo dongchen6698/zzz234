@@ -14,7 +14,7 @@ import TD.view.PlayScreen_View;
 
 /**
  * This is model for Grid Cells Module.
- * 
+ * @author peilin
  */
 public class GridCell_Model extends Rectangle{
     
@@ -63,8 +63,7 @@ public class GridCell_Model extends Rectangle{
         }
         this.gID = gID;
         this.airID = airID;
-        //xC = (x/44);
-        //yC = (y/44);
+       
     }
     
     public void physic(Creature_Model[] cModel) throws ParseException{
@@ -227,6 +226,10 @@ public class GridCell_Model extends Rectangle{
         this.towerRange[i] = towerRange;
     }
     
+    /**
+     * this method is get current time
+     * @return string
+     */
     public String getCurrentTime(){
         Calendar cal = Calendar.getInstance();
     	cal.getTime();

@@ -7,7 +7,7 @@ import TD.controller.CellContainer_Controller;
 
 /**
  * This is GUI class of Cell Container Module.
- * 
+ * @author peilin
  */
 public class CellContainer_View {
     private CellContainer_Controller ccCont;
@@ -23,7 +23,6 @@ public class CellContainer_View {
      * @param g the Graphics
      */
     public void draw(Graphics g){
-        //Draw Block
         for(int y=0;y<ccCont.getyC();y++){
             for(int x=0;x<ccCont.getxC();x++){
                 ccCont.getgcCont().getDraw(ccCont.getgcModelObj(y, x),g);

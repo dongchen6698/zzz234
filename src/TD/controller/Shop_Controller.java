@@ -194,17 +194,11 @@ public class Shop_Controller implements Observer {
                             ConfigModel.TowerLevel[sModel.getTowerID()]++;
                             ConfigModel.money -= ConfigModel.TowerPrice[sModel.getTowerID()];
                             
-                            //LogGenerator.addLog("Tower Upgrade to Level:"+ConfigModel.TowerLevel[sModel.getTowerID()]+
-                            //                    " Range:" +ConfigModel.airTowerRanger[sModel.getTowerID()]+
-                            //                    " Rate:" +ConfigModel.TowerFiringRate[sModel.getTowerID()]);
-                            //LogGenerator.addLog("Tower Upgrade cost deducted from total money.");
                             for(int y=0;y<ccCont.getyC();y++){
                                 for(int x=0;x<ccCont.getxC();x++){
                                     if(ccCont.getgcModelObj(y, x).getAirID() == (sModel.getTowerID()+3)){
                                         ccCont.getgcModelObj(y, x).setTowerRange(sModel.getTowerID(), new Rectangle(ccCont.getgcModelObj(y, x).x - ((ConfigModel.airTowerRanger[sModel.getTowerID()])/2), ccCont.getgcModelObj(y, x).y - ((ConfigModel.airTowerRanger[sModel.getTowerID()])/2), ccCont.getgcModelObj(y, x).width + ConfigModel.airTowerRanger[sModel.getTowerID()], ccCont.getgcModelObj(y, x).height + ConfigModel.airTowerRanger[sModel.getTowerID()]));
-                                      //  ccCont.getgcModelObj(y, x).towerLog[sModel.getTowerID()] += LogGenerator.getLogTime()+"Tower Upgrade to Level:"+ConfigModel.TowerLevel[sModel.getTowerID()]+
-                                        //        " Range:" +ConfigModel.airTowerRanger[sModel.getTowerID()]+
-                                     //           " Rate:" +ConfigModel.TowerFiringRate[sModel.getTowerID()]+"\n";
+                                 
                                     }
                                 }
                             }

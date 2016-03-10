@@ -13,7 +13,7 @@ import TowerDefenceGame.GamePlay;
 
 /**
  * This Class will bind and initialize Model-View of Map Chooser Module.
- * 
+ * @author peilin
  */
 public class MapChooser_Controller {
 

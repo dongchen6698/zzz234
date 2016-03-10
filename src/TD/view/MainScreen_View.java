@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 
 /**
  * This is GUI class for Main Screen. It will show buttons(Start Game, Create Maps, EXIT GAME).
- * @author AlexChen
+ * @author peilin
  */
 public class MainScreen_View extends JFrame implements WindowListener{
 	private JButton start,creat,exit;

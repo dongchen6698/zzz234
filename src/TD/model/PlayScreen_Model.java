@@ -8,7 +8,7 @@ import java.io.File;
 import java.util.Scanner;
 /**
  * This is model for Play Screen Module.
- * 
+ * @author peilin
  */
 public class PlayScreen_Model {
     
@@ -55,14 +55,12 @@ public class PlayScreen_Model {
             this.xC = loadScanner.nextInt();
             this.yC = loadScanner.nextInt();
             gridCellArray = new int[getyC()][getxC()];
-            //System.out.println("MapCreationModel X: "+xC+" Y:"+yC);
              while(loadScanner.hasNext()){
                  Thread.sleep(100);
                 for(int y=0;y<getyC();y++){
                     for(int x=0;x<getxC();x++){
                         int val = loadScanner.nextInt();
                         gridCellArray[y][x] = val;
-                        //System.out.println("XY X: "+x+" Y:"+y+" val:"+val);
                     }
                 }
              }

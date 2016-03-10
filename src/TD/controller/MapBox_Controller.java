@@ -16,7 +16,7 @@ import TD.view.MapBox_View;
 
 /**
  * This Class will bind and initialize Model-View of Map Box Module.
- * @author AlexChen
+ * @author peilin
  */
 public class MapBox_Controller {
     

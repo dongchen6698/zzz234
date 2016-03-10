@@ -7,7 +7,7 @@ import TD.controller.MapBox_Controller;
 
 /**
  * This is GUI class of Map Box Module.
- * @author AlexChen
+ * @author peilin
  */
 public class MapBox_View extends JPanel {
 

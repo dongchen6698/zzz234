@@ -10,7 +10,7 @@ import TD.model.Shop_Model;
 
 /**
   * This is GUI class of Shop(Tower) Module.
- * 
+ * @author peilin
  */
 public class Shop_View {
     
@@ -61,7 +61,6 @@ public class Shop_View {
         g.drawString(""+ConfigModel.money, sModel.btn_coins.x + sModel.icon_space, sModel.btn_coins.height + 30);
         
         if(sModel.isHoldsItem()){
-            //System.out.println("X:"+ConfigModel.mse.x+" Y:"+ConfigModel.mse.y);
             g.drawImage(ConfigModel.air_level[sModel.getHeldID()], ConfigModel.mse.x - ((sModel.button[0].width -(sModel.itemIn*2))/2) + sModel.itemIn, ConfigModel.mse.y - ((sModel.button[0].width -(sModel.itemIn*2))/2) + sModel.itemIn, sModel.button[0].width -(sModel.itemIn*2), sModel.button[0].height - (sModel.itemIn*2),null);
         }
         

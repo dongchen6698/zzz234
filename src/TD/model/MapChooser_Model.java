@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  * This is model for Map Chooser Module.
- * 
+ * @author peilin
  */
 public class MapChooser_Model {
     private String[] FileList;

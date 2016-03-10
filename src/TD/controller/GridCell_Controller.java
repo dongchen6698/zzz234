@@ -6,7 +6,7 @@ import TD.view.GridCell_View;
 
 /**
  * This Class will bind and initialize Model-View of Play Screen Module.
- * 
+ * @author peilin
  */
 public class GridCell_Controller {
 

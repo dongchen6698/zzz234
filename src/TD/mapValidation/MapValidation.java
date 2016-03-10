@@ -4,7 +4,7 @@ import TD.config.ConfigModel;
 
 /**
  * This controller will used to validation of Map.
- * @author AlexChen
+ * @author peilin
  */
 public class MapValidation {
     static int enX = 0;

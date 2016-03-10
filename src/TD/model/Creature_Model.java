@@ -5,8 +5,9 @@ import java.awt.Rectangle;
 import TD.config.ConfigModel;
 import TD.controller.CellContainer_Controller;
 /**
+ * This class is model of creature
+ * @author peilin
  *
- * 
  */
 public class Creature_Model extends Rectangle{
     
@@ -58,10 +59,8 @@ public class Creature_Model extends Rectangle{
             }
         }
         this.mobID = mobID;
-        //this.setHealth(getHealth());
         setInGame(true);
-        //System.out.println("Mob Id: "+getHealth());
-       // LogGenerator.addLog("Mob Id:"+getMobID()+" get started moving.");
+
         return true;
     }
     
@@ -77,8 +76,7 @@ public class Creature_Model extends Rectangle{
             ccModel.getGcModelObj(yC, 0).getMoney(getMobID());
             ConfigModel.killed +=1;
             ConfigModel.total_killed +=1;
-           // LogGenerator.addLog("Mob Killed, Mob Id :"+getMobID());
-           // LogGenerator.addLog("Mob killing reward added to main amount.");
+         
         }
         this.setHealth(0);
         return true;
@@ -218,7 +216,7 @@ public class Creature_Model extends Rectangle{
                 }
                 
                 if(ccCont.getgcModelObj(yC, xC).getAirID()== ConfigModel.airCave){
-                    //System.out.println("Delete+loosHealth "+getMobID());
+           
                     deleteCreature();
                     loosHealth();
                 }

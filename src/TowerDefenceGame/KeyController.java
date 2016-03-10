@@ -10,7 +10,7 @@ import TD.config.ConfigModel;
 
 /**
  * This class will take input from user via mouse and trigger the appropriate function.
- * 
+ * @author peilin
  */
 public class KeyController extends Observable implements MouseMotionListener, MouseListener {
 

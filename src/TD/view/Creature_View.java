@@ -7,8 +7,9 @@ import TD.config.ConfigModel;
 import TD.model.Creature_Model;
 
 /**
+ * This class is a view of Creature
+ * @author peilin
  *
- * 
  */
 public class Creature_View {
     /**

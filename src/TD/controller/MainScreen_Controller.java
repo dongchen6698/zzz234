@@ -13,7 +13,7 @@ import TD.view.MapChooser_View;
 import TD.view.MapCreation_View;
 /**
  * This Class will bind and initialize Model-View of Main Screen Module.
- * @author AlexChen
+ * @author peilin
  */
 public class MainScreen_Controller {
 	MainScreen_View theView;
@@ -42,7 +42,6 @@ public class MainScreen_Controller {
     	MapCreation_View mcView = new MapCreation_View();
         MapCreation_Model mcModel = new MapCreation_Model();
         mcView.setVisible(true);
-        //theView.setEnabled(false);
         theView.setAlwaysOnTop(false);
         mcView.setAlwaysOnTop(true);
         mcView.setFocusable(true);

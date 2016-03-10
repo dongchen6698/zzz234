@@ -7,7 +7,7 @@ import TD.controller.GridCell_Controller;
 
 /**
  * This is model class of Cell Container
- * 
+ * @author peilin
  */
 public class CellContainer_Model {
     private int xC = 10;

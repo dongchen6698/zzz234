@@ -24,7 +24,7 @@ import TD.view.Shop_View;
 
 /**
  * This class initialize the game play screen.
- * 
+ * @author peilin
  */
 public class GamePlay extends JFrame implements WindowListener {
     
@@ -102,25 +102,17 @@ public class GamePlay extends JFrame implements WindowListener {
 
     @Override
     public void windowOpened(WindowEvent e) {
-       // LogGenerator.addLog("Game Play Start");
+       
     }
 
     @Override
     public void windowClosing(WindowEvent e) {
-        //LogGenerator.addLog("Game Play Window Closed.");
-       // LogGenerator.addLog("Game Closed");
-        //LogGenerator.closeLog();
-       // LogGenerator.towerLog();
-        //this.dispose();
         System.exit(0);
     }
 
     @Override
     public void windowClosed(WindowEvent e) {
-       // LogGenerator.addLog("Game Play Window Closed.");
-      // LogGenerator.addLog("Game Closed");
-       // LogGenerator.closeLog();
-       // LogGenerator.towerLog();
+   
         this.dispose();
         System.exit(0);
     }

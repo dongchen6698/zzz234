@@ -13,7 +13,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import TD.model.MapCreation_Model;
 import TD.view.MapCreation_View;
-
+/**
+ * This class is a controller of Mapcreation
+ * @author peilin
+ *
+ */
 public class MapCreation_Controller {
 	MapCreation_View theView;
     MapCreation_Model theModel;
@@ -24,7 +28,12 @@ public class MapCreation_Controller {
     public MapCreation_Controller(){
     	
     }
-    
+    /**
+     * This is a constructor of the class
+     * @param mcView the mapcreation view
+     * @param mcModel the mapcreation model
+     * @param msCon the mainscreen controller
+     */
 	public MapCreation_Controller(MapCreation_View mcView, MapCreation_Model mcModel,MainScreen_Controller msCon) {
 		this.theView = mcView;
 		this.theModel = mcModel;

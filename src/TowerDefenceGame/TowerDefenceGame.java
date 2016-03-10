@@ -1,7 +1,11 @@
 package TowerDefenceGame;
 
 import TD.controller.MainScreen_Controller;
-
+/**
+ * 
+ * @author peilin
+ *
+ */
 public class TowerDefenceGame {
 	/**
 	 * main function entry

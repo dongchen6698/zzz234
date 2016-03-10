@@ -9,7 +9,7 @@ import TD.model.GridCell_Model;
 
 /**
  * This is GUI class of Grid Cell Module.
- * 
+ * @author peilin
  */
 public class GridCell_View {
     

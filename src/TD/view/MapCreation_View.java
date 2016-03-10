@@ -17,7 +17,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import TD.controller.MapBox_Controller;
-
+/**
+ * This class is a view  of mapcreation
+ * 
+ * @author peilin
+ *
+ */
 public class MapCreation_View extends JFrame implements WindowListener{
 	JComboBox rowInfo,colInfo;
 	JButton setMapBTN;

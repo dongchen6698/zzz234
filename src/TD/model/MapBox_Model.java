@@ -1,7 +1,7 @@
 package TD.model;
 /**
  * This is model for Map Box Module.
- * @author AlexChen
+ * @author peilin
  */
 public class MapBox_Model {
     

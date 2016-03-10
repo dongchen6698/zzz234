@@ -6,7 +6,7 @@ import TD.config.ConfigModel;
 
 /**
  * This is model for Shop(Tower) Module. Tower properties, user health, money.
- * 
+ * @author peilin
  */
 public class Shop_Model {
 

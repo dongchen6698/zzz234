@@ -26,7 +26,7 @@ import TowerDefenceGame.*;
 
 /**
   * This is GUI class of Play Screen Module.
- * 
+ * @author peilin
  */
 public class PlayScreen_View extends JPanel implements Runnable {
 
@@ -83,7 +83,7 @@ public class PlayScreen_View extends JPanel implements Runnable {
         
         happy[0] = new ImageIcon("resources/happy.gif").getImage();
         sad[0] = new ImageIcon("resources/sad.gif").getImage();
-       // LogGenerator.addLog("Basic Images are loaded successfully.");
+   
     }
     
     /**
@@ -92,12 +92,10 @@ public class PlayScreen_View extends JPanel implements Runnable {
      */
     public boolean initCreatures(){
         System.out.println("initCreatures");
-       // LogGenerator.addLog("First Level get started");
-      //  LogGenerator.addLog(creaturesNo+" New Creatures Created.");
+   
         if(psCont != null){
             for(int i=0;i<Creatures.length;i++){
                 Creatures[i] = new Creature_Model(psCont.getCcModel(),psCont.getCcCont());
-                //mobs[i].spawnMob(0);
             }
             isFirst = false;
             return true;
@@ -122,8 +120,6 @@ public class PlayScreen_View extends JPanel implements Runnable {
             ConfigModel.killed = 0;
             ConfigModel.waveLap++;
             ConfigModel.level++;
-           // LogGenerator.addLog("Game Level Upgraded to : "+level);
-          //  LogGenerator.addLog("new Creatures : "+ConfigModel.creaturesNo);
             Creatures = new Creature_Model[ConfigModel.creaturesNo];
             for(int i=0;i<Creatures.length;i++){
                 Creatures[i] = new Creature_Model(psCont.getCcModel(),psCont.getCcCont());
@@ -189,7 +185,6 @@ public class PlayScreen_View extends JPanel implements Runnable {
      * @param g the Graphics
      */
     public void paintComponent(Graphics g){
-        //System.out.println("xyz");
         w=g;
         if(isFirst)
         {
@@ -214,7 +209,6 @@ public class PlayScreen_View extends JPanel implements Runnable {
         }
         
         if(hasWon() || isWon){
-           // LogGenerator.addLog("User Won Game");
             System.out.println("Congratulations");
             Point Cp= GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
             for(int i=0; i< Creatures.length;i++){
@@ -243,7 +237,6 @@ public class PlayScreen_View extends JPanel implements Runnable {
             }
             gameOberFlag = true;
             System.out.println("Game Over");
-           //LogGenerator.addLog("User lost game.");
             Point Cp= GraphicsEnvironment.getLocalGraphicsEnvironment().getCenterPoint();
             for(int i=0; i< Creatures.length;i++){
                 Creatures[i].setHealth(0);
