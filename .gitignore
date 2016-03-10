@@ -8,4 +8,18 @@
 *.class
 
 *.class
+<<<<<<< Updated upstream
 *.class
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
+*.class
+
+*.java
+>>>>>>> Stashed changes
+
+*.class
+
+*.prefs
