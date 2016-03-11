@@ -76,7 +76,7 @@ public class PlayScreen_View extends JPanel implements Runnable {
         tileset_res[0] = new ImageIcon("resources/cell.png").getImage();
         tileset_res[1] = new ImageIcon("resources/heart.png").getImage();
         tileset_res[2] = new ImageIcon("resources/coin_icon.png").getImage();
-        tileset_mob[0] = new ImageIcon("resources/mob_level1.png").getImage();
+        tileset_mob[0] = new ImageIcon("resources/critter.png").getImage();
         fire[0] = new ImageIcon("resources/fire.gif").getImage();
         ice[0] = new ImageIcon("resources/ice.png").getImage();
         star[0] = new ImageIcon("resources/star.gif").getImage();
