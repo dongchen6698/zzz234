@@ -2,8 +2,8 @@ package TD.model;
 
 import java.awt.Rectangle;
 
+import TD.config.ConfigModel;
 import TD.controller.CellContainer_Controller;
-import TD.zz.config.ConfigModel;
 /**
  * This class is model of creature
  * @author peilin

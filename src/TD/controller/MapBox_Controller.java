@@ -10,9 +10,9 @@ import java.io.Writer;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 
+import TD.mapValidation.MapValidation;
 import TD.model.MapBox_Model;
 import TD.view.MapBox_View;
-import TD.zz.mapValidation.MapValidation;
 
 /**
  * This Class will bind and initialize Model-View of Map Box Module.

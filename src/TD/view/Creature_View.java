@@ -3,8 +3,8 @@ package TD.view;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import TD.config.ConfigModel;
 import TD.model.Creature_Model;
-import TD.zz.config.ConfigModel;
 
 /**
  * This class is a view of Creature
