@@ -63,15 +63,21 @@ public class PlayScreen_View extends JPanel implements Runnable {
         
         j.addMouseListener(eventSource);
         j.addMouseMotionListener(eventSource);
-        for(int i=0;i<ground_level.length;i++){
-            ground_level[i] = new ImageIcon("resources/grass_tile1.png").getImage();
-            ground_level[i] = createImage(new FilteredImageSource(ground_level[i].getSource(), new CropImageFilter(0, 40*i, 40, 40)));
-        }
+//        for(int i=0;i<ground_level.length;i++){
+//            ground_level[i] = new ImageIcon("resources/grass_tile1.png").getImage();
+//            ground_level[i] = createImage(new FilteredImageSource(ground_level[i].getSource(), new CropImageFilter(0, 40*i, 40, 40)));
+//        }
+        ground_level[0] = new ImageIcon("resources/green_road.png").getImage();
+        ground_level[1] = new ImageIcon("resources/brown_road.png").getImage();
         
-        for(int i=0;i<air_level.length;i++){
-            air_level[i] = new ImageIcon("resources/air_tile1.png").getImage();
-            air_level[i] = createImage(new FilteredImageSource(air_level[i].getSource(), new CropImageFilter(0, 40*i, 40, 40)));
-        }
+//        for(int i=0;i<air_level.length;i++){
+//            air_level[i] = new ImageIcon("resources/air_tile1.png").getImage();
+//            air_level[i] = createImage(new FilteredImageSource(air_level[i].getSource(), new CropImageFilter(0, 40*i, 40, 40)));
+//        }
+        air_level[3] = new ImageIcon("resources/tower_1.png").getImage();
+        air_level[4] = new ImageIcon("resources/tower_2.png").getImage();
+        air_level[5] = new ImageIcon("resources/tower_3.png").getImage();
+        air_level[6] = new ImageIcon("resources/tower_4.png").getImage();
         
         tileset_res[0] = new ImageIcon("resources/cell.png").getImage();
         tileset_res[1] = new ImageIcon("resources/heart.png").getImage();

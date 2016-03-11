@@ -73,7 +73,6 @@ public class Shop_View {
             g.drawString("Range: "+ConfigModel.airTowerRanger[sModel.getTowerID()], sModel.btn_health.x - 30 + sModel.icon_space, sModel.btn_health.height + temp_Height + 75);
             g.drawString("Level: "+ConfigModel.TowerLevel[sModel.getTowerID()], sModel.btn_health.x - 30 + sModel.icon_space, sModel.btn_health.height + temp_Height + 90);
             g.drawString("Refund Rate: "+(int)x, sModel.btn_health.x - 30 + sModel.icon_space, sModel.btn_health.height + temp_Height + 105);
-            
             g.setColor(new Color(255, 255, 255, 100));            
             
             if(ConfigModel.TowerLevel[sModel.getTowerID()] < 5){
