@@ -13,7 +13,7 @@ public class MapChooser_Model {
       This is constructor method for Map Chooser. It will call Map Folder reader.
      */
     public MapChooser_Model(){
-        listFilesForFolder(new File("MapFiles"));
+        listFilesForFolder(new File("MapFiles/"));
     }
     
     /**

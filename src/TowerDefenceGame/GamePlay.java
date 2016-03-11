@@ -35,17 +35,17 @@ public class GamePlay extends JFrame implements WindowListener {
      * @param w Width of Play screen based on map size
      * @param h Height of Play screen based on map size
      */
-    public GamePlay(File f, int w, int h)
+    public GamePlay(File file, int w, int h)
     {
         int width = w*40 + 350;
-        int height = h*40 + 120;
+        int height = h*40 + 100;
         this.setTitle("Tower Defence Game");
         this.setSize(width,height);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setAlwaysOnTop(true);
         this.setBackground(Color.darkGray);
-        init_elements(f);
+        init_elements(file);
         this.addWindowListener(this);
     }
     
@@ -53,23 +53,23 @@ public class GamePlay extends JFrame implements WindowListener {
      * This method will check the Map file and based on the type of map, it will bind the model to the controller and create the play view using the View.
      * @param f Map file which is selected by user from list box.
      */
-    public void init_elements(File f)
+    public void init_elements(File file)
     {
         this.setLayout(new GridLayout(1, 1, 0, 0));
         
         PlayScreen_Model psModel = new PlayScreen_Model();
-                        boolean temp = psModel.LoadMap(f);
+                        boolean temp = psModel.LoadMap(file);
                         if(temp){
                             MapValidation mv = new MapValidation(psModel.getGridCellArray());
                             if(mv.isValid()){
-                                System.out.println("Map is Valid");
+                                //System.out.println("Map is Valid");
                                 ConfigModel cModel = new ConfigModel(); 
                             
                                 psModel.initCellContainerModel();
                                 psModel.setGridCellVal();
 
-                                Shop_Model sModel = new Shop_Model(psModel.getStartX(),psModel.getStartY());
                                 Shop_View sView = new Shop_View();
+                                Shop_Model sModel = new Shop_Model(psModel.getStartX(),psModel.getStartY());
 
                                 CellContainer_View ccView = new CellContainer_View();
                                 CellContainer_Model ccModel = psModel.getCellContainer_Model();
@@ -78,10 +78,10 @@ public class GamePlay extends JFrame implements WindowListener {
                                 GridCell_Model[][] gcModel = ccModel.getGcModel();
 
                                 PlayScreen_View psView = new PlayScreen_View(this);
-                                add(psView);
+                                this.add(psView);
                                 psCont = new PlayScreen_Controller(psView, psModel, gcView, gcModel, ccView, ccModel, sView, sModel);
                                 psView.setController(getPsCont());
-                                psView.startGame();
+                                //psView.startGame();
                                 this.setVisible(true);
                             }else{
                                 System.out.println("Map Is Invalid");

@@ -49,14 +49,14 @@ public class PlayScreen_Model {
      * @return return true if map file is valid.
      */
     public boolean LoadMap(File file) {
-    	System.out.println("load map");
+    	//System.out.println("load map");
         try{
             Scanner loadScanner = new Scanner(file);
             this.xC = loadScanner.nextInt();
             this.yC = loadScanner.nextInt();
             gridCellArray = new int[getyC()][getxC()];
              while(loadScanner.hasNext()){
-                 Thread.sleep(100);
+                 //Thread.sleep(100);
                 for(int y=0;y<getyC();y++){
                     for(int x=0;x<getxC();x++){
                         int val = loadScanner.nextInt();
@@ -64,16 +64,16 @@ public class PlayScreen_Model {
                     }
                 }
              }
-            for(int y=0;y<getyC();y++){
-                for(int x=0;x<getxC();x++){
-                    System.out.print(getGridCellArray()[y][x]+" ");
-                }
-                System.out.println("\n");
-            }
+//            for(int y=0;y<getyC();y++){
+//                for(int x=0;x<getxC();x++){
+//                    System.out.print(getGridCellArray()[y][x]+" ");
+//                }
+//                System.out.println("\n");
+//            }
              loadScanner.close();
              return true;
          } catch(Exception e){
-             System.out.println("Hey Buddy, Somtething is wrong in file.");
+             //System.out.println("Hey Buddy, Somtething is wrong in file.");
              return false;
          }
     }
@@ -83,6 +83,7 @@ public class PlayScreen_Model {
      */
     public void initCellContainerModel() {
         ccModel = new CellContainer_Model(getGridCellArray().length,getGridCellArray()[0].length);
+        //System.out.println(getGridCellArray().length+" "+getGridCellArray()[0].length);
     }
     
     /**
@@ -92,13 +93,13 @@ public class PlayScreen_Model {
         for(int y=0;y<getGridCellArray().length;y++){
             for(int x=0;x<getGridCellArray()[0].length;x++){
                 if(getGridCellArray()[y][x] == 7 || getGridCellArray()[y][x] == 8){
-                    System.out.println("ExitPoint");
+                    //System.out.println("ExitPoint");
                     ccModel.setGcModelObj(y, x, 1, getGridCellArray()[y][x]);
                 }
                 else
                     ccModel.setGcModelObj(y, x, getGridCellArray()[y][x],-1);
             }
-            System.out.println("\n");
+            //System.out.println("\n");
         }
     }
     

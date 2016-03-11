@@ -53,6 +53,7 @@ public class Shop_Model {
     public Shop_Model(int startX, int startY){
         this.startX = startX;
         this.startY = startY;
+        //System.out.println("shop model "+startX+" and "+startY);
         define();
     }
     

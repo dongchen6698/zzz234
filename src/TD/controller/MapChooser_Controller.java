@@ -55,11 +55,12 @@ public class MapChooser_Controller {
                     }else{
                         PlayScreen_Model psModel = new PlayScreen_Model();
                         boolean temp = psModel.LoadMap(new File("MapFiles/"+theView.getSelectedFile()));
+                        //System.out.println(temp);
                         if(temp){
                             GamePlay gp = new GamePlay(new File("MapFiles/"+theView.getSelectedFile()), psModel.getxC(), psModel.getyC());
                             theView.setMSTOp(false);
                             theView.dispose();
-                      }
+                        }
                         else{
                             theView.displayMessage("Incorrect Map File");
                         }

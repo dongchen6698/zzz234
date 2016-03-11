@@ -38,7 +38,7 @@ public class MapChooser_View extends JFrame {
      */
     public MapChooser_View(MainScreen_View msView, String[] fileList){
         this.setTitle("Select Your Map");
-        this.setSize(200,300);
+        this.setSize(300,400);
         this.msView = msView;
         listMapFiles(fileList);
         this.setLocationRelativeTo(null);

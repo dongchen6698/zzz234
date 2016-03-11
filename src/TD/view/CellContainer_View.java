@@ -16,6 +16,7 @@ public class CellContainer_View {
      * This is constructor.
      */
     public CellContainer_View(){
+    	
     }
     
     /**
